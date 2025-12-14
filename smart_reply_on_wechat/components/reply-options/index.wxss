@@ -1,0 +1,100 @@
+/* components/reply-options/index.wxss */
+.reply-options-container {
+  display: flex !important;
+  flex-direction: column;
+  padding: 32rpx;
+  width: 100% !important;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  min-height: 400rpx;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.reply-header {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #303133 !important;
+  margin-bottom: 24rpx;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.reply-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  width: 100%;
+}
+
+.reply-option-item {
+  position: relative;
+  padding: 32rpx;
+  background-color: #ffffff !important;
+  border-radius: 20rpx; /* 10px */
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05) !important;
+  border: 0.5rpx solid rgba(0, 0, 0, 0.04) !important;
+  min-height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.reply-option-item:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08) !important;
+}
+
+.option-wording {
+  font-size: 32rpx; /* 16px */
+  line-height: 1.5; /* 行间距1.5倍 */
+  color: #303133 !important;
+  font-weight: 400;
+  letter-spacing: 0;
+  word-break: break-word;
+  word-wrap: break-word;
+  flex: 1;
+  padding-right: 140rpx; /* 为复制按钮预留空间 */
+  margin-bottom: 20rpx;
+}
+
+.option-copy-btn {
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+  padding: 12rpx 24rpx;
+  background-color: #409EFF !important;
+  border: none !important;
+  border-radius: 12rpx; /* 6px */
+  min-width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-text {
+  font-size: 28rpx; /* 14px */
+  color: #ffffff !important;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.option-copy-btn:active {
+  transform: scale(0.95);
+  background-color: #3A8EE6 !important;
+}
+
+.option-copy-btn.copied {
+  background-color: #67C23A !important;
+}
+
+.option-copy-btn.copied .copy-text::after {
+  content: " ✓";
+  margin-left: 4rpx;
+}
+

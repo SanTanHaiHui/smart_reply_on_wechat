@@ -1,0 +1,320 @@
+/* pages/index/index.wxss */
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #F5F7FA;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 32rpx 40rpx 24rpx;
+  background-color: #ffffff;
+  border-bottom: 0.5rpx solid #E6E6E6;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.header-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  display: block;
+  font-size: 36rpx; /* 18px */
+  font-weight: 600;
+  color: #303133;
+  margin-bottom: 8rpx;
+  line-height: 1.2;
+}
+
+.header-subtitle {
+  display: block;
+  font-size: 28rpx; /* 14px */
+  color: #909399;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.chat-container {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: #F5F7FA;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* 确保agent-ui组件正确布局 */
+.chat-container .agent-ui {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* 配置按钮样式 - 蓝色线性图标，位于标题右侧 */
+.config-btn {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1rpx solid transparent;
+}
+
+.config-btn:active {
+  transform: scale(1.1);
+  background-color: rgba(64, 158, 255, 0.1);
+}
+
+.config-icon {
+  font-size: 40rpx;
+  color: #409EFF;
+  font-weight: 300;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.config-btn:active .config-icon {
+  color: #3A8EE6;
+  transform: scale(1.1);
+}
+
+/* 覆盖agent-ui组件的样式 - 蓝白配色 */
+.agent-ui {
+  height: 100%;
+  background-color: #F5F7FA;
+}
+
+/* 优化聊天消息气泡样式 - 蓝白配色 */
+.agent-ui .user_content {
+  background-color: #409EFF;
+  color: #ffffff;
+  border-radius: 20rpx 20rpx 4rpx 20rpx;
+  padding: 16rpx 24rpx;
+  font-size: 32rpx;
+  line-height: 1.5;
+  letter-spacing: 0;
+  box-shadow: 0 2rpx 8rpx rgba(64, 158, 255, 0.15);
+}
+
+.agent-ui .assistant_content {
+  background-color: #ffffff;
+  color: #303133;
+  border-radius: 20rpx 20rpx 20rpx 4rpx;
+  padding: 16rpx 24rpx;
+  font-size: 32rpx; /* 16px */
+  line-height: 1.5; /* 行间距1.5倍 */
+  letter-spacing: 0;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+  border: 0.5rpx solid rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.agent-ui .assistant_content:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+/* 助手内容包装器 - 用于定位复制按钮 */
+.agent-ui .assistant-content-wrapper {
+  position: relative;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 8rpx;
+  min-height: 200rpx; /* 确保有足够空间显示卡片 */
+  z-index: 10;
+}
+
+/* 注意：由于组件样式隔离，以下样式需要在 agent-ui 组件内部定义 */
+/* 已移动到 components/agent-ui/index.wxss */
+
+/* 确保markdown内容区域有足够空间 */
+.agent-ui .assistant-content-wrapper markdownPreview {
+  display: block;
+  width: 100%;
+}
+
+/* 复制按钮样式 - 蓝色圆角矩形，位于卡片右下角 */
+.agent-ui .copy-btn-wrapper {
+  position: absolute;
+  bottom: 16rpx;
+  right: 16rpx;
+  min-width: 120rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #409EFF;
+  border-radius: 12rpx; /* 6px */
+  transition: all 0.2s ease;
+  z-index: 10;
+  padding: 0 20rpx;
+  box-shadow: 0 2rpx 4rpx rgba(64, 158, 255, 0.2);
+  cursor: pointer;
+}
+
+.agent-ui .copy-btn-wrapper:active {
+  transform: scale(0.95);
+  box-shadow: 0 1rpx 2rpx rgba(64, 158, 255, 0.3);
+  background-color: #3A8EE6;
+}
+
+.agent-ui .copy-btn-text {
+  font-size: 28rpx; /* 14px */
+  color: #ffffff;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* 优化输入框容器样式 */
+.agent-ui .input_box {
+  background-color: #ffffff !important;
+  border-top: 0.5rpx solid rgba(0, 0, 0, 0.08) !important;
+  padding: 24rpx 32rpx !important;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.08) !important;
+  min-height: 120rpx !important;
+  display: flex !important;
+  align-items: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  gap: 16rpx !important;
+}
+
+/* 搜索框样式优化 - 蓝白配色 */
+.agent-ui .search-box {
+  background-color: #ffffff !important;
+  border: 1rpx solid #E6E6E6 !important;
+  border-radius: 16rpx !important; /* 8px */
+  box-shadow: none !important;
+  min-height: 88rpx !important;
+  padding: 0 24rpx !important;
+  gap: 16rpx !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+}
+
+/* 强制显示搜索框，即使useVoice为true */
+.agent-ui .search-box[hidden] {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.agent-ui .search-box:focus-within {
+  border-color: #409EFF !important;
+  box-shadow: 0 0 0 2rpx rgba(64, 158, 255, 0.1) !important;
+  background-color: #ffffff !important;
+}
+
+/* 搜索图标样式 */
+.agent-ui .search-icon {
+  width: 36rpx !important;
+  height: 36rpx !important;
+  flex-shrink: 0;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.agent-ui .search-input {
+  color: #303133 !important;
+  font-size: 28rpx !important; /* 14px */
+  letter-spacing: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 48rpx !important;
+  flex: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.agent-ui .search-input::placeholder {
+  color: #C0C4CC !important;
+  font-size: 28rpx !important; /* 14px */
+  opacity: 1 !important;
+}
+
+/* 优化发送按钮 */
+.agent-ui .right_btns .set {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007aff;
+  box-shadow: 0 4rpx 12rpx rgba(0, 122, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.agent-ui .right_btns .set:active {
+  transform: scale(0.95);
+  box-shadow: 0 2rpx 6rpx rgba(0, 122, 255, 0.4);
+}
+
+/* 优化推荐问题样式 - 蓝色主题 */
+.agent-ui .question_content {
+  background-color: #ffffff;
+  color: #409EFF;
+  border: 0.5rpx solid rgba(64, 158, 255, 0.2);
+  border-radius: 20rpx;
+  padding: 20rpx 32rpx;
+  font-size: 28rpx;
+  letter-spacing: 0;
+  transition: all 0.2s ease;
+}
+
+.agent-ui .question_content:active {
+  background-color: #ECF5FF;
+  transform: scale(0.98);
+}
+
+/* 确保输入框区域有足够空间 */
+.agent-ui .foot_function {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 20rpx) !important;
+  background-color: #ffffff !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.agent-ui .footer {
+  background-color: #ffffff !important;
+  padding: 24rpx 32rpx !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  border-top: 0.5rpx solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.08) !important;
+  width: 100% !important;
+  max-width: 750rpx !important;
+  margin: 0 auto !important;
+}

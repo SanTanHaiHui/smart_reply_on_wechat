@@ -1,0 +1,62 @@
+<!--components/config-panel/index.wxml-->
+<view class="config-mask {{show ? 'show' : ''}}" bindtap="onClose">
+  <view class="config-panel {{show ? 'show' : ''}}" catchtap="">
+    <view class="config-header">
+      <text class="config-title">对话设置</text>
+      <view class="close-btn" bindtap="onClose">
+        <text>✕</text>
+      </view>
+    </view>
+    
+    <view class="config-content">
+      <!-- 关系 -->
+      <view class="config-item">
+        <text class="config-label">关系</text>
+        <view class="config-options">
+          <view 
+            class="config-option {{relation === item ? 'active' : ''}}"
+            wx:for="{{relationOptions}}" 
+            wx:key="index"
+            data-value="{{item}}"
+            bindtap="onRelationChange"
+          >
+            {{item}}
+          </view>
+        </view>
+      </view>
+
+      <!-- 关系密度 -->
+      <view class="config-item">
+        <text class="config-label">关系密度</text>
+        <view class="config-options">
+          <view 
+            class="config-option {{relationDensity === item ? 'active' : ''}}"
+            wx:for="{{relationDensityOptions}}" 
+            wx:key="index"
+            data-value="{{item}}"
+            bindtap="onRelationDensityChange"
+          >
+            {{item}}
+          </view>
+        </view>
+      </view>
+
+      <!-- 回复风格 -->
+      <view class="config-item">
+        <text class="config-label">回复风格</text>
+        <view class="config-options">
+          <view 
+            class="config-option {{replyStyle === item ? 'active' : ''}}"
+            wx:for="{{replyStyleOptions}}" 
+            wx:key="index"
+            data-value="{{item}}"
+            bindtap="onReplyStyleChange"
+          >
+            {{item}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

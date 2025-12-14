@@ -1,0 +1,11 @@
+<block>
+  <view class="customCard">
+    <custom-map wx:if="{{name === 'geocoder' || name === 'placeSearchNearby' || 'directionDriving'}}" name="{{name}}" toolParams="{{toolParams}}" toolData="{{toolData}}"></custom-map>
+  </view>
+  <view class="customCard">
+    <custom-weather  wx:if="{{name === 'weather'}}" name="{{name}}" toolData="{{toolData}}"></custom-weather>
+  </view>
+  <view class="customCard" wx:if="{{name === 'placeSearchNearby'}}">
+    <custom-business-list name="{{name}}" toolData="{{toolData}}"></custom-business-list>
+  </view>
+</block>

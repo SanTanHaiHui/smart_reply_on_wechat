@@ -1,0 +1,139 @@
+# 微信小程序项目 .gitignore
+
+# ============================================
+# 配置文件（包含敏感信息）
+# ============================================
+# 项目私有配置文件（包含个人配置，不应提交）
+project.private.config.json
+
+# 实际配置文件（如果从 CONFIG.example.js 复制）
+CONFIG.js
+config.js
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# ============================================
+# 微信开发者工具生成的文件
+# ============================================
+# npm 构建产物
+miniprogram_npm/
+node_modules/
+
+# 微信开发者工具缓存
+.tea/
+
+# 云函数相关（如果使用云开发）
+cloudfunctions/
+cloudfunctionTemplate/
+
+# ============================================
+# 编译和构建产物
+# ============================================
+dist/
+build/
+*.min.js.map
+
+# ============================================
+# 日志和临时文件
+# ============================================
+*.log
+*.tmp
+*.temp
+*.cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# 操作系统生成的文件
+# ============================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# IDE 和编辑器配置文件
+# ============================================
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json.example
+!.vscode/tasks.json.example
+!.vscode/launch.json.example
+!.vscode/extensions.json.example
+
+# JetBrains IDEs (WebStorm, IntelliJ IDEA, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw?
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ============================================
+# 测试和覆盖率报告
+# ============================================
+coverage/
+.nyc_output/
+*.lcov
+
+# ============================================
+# 其他
+# ============================================
+# 备份文件
+*.bak
+*.backup
+*.old
+
+# 压缩文件（如果不需要版本控制）
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# 本地开发文件
+*.local
+
+# 用户上传的文件（如果有上传目录）
+uploads/
+user-uploads/
+
+# 调试文件
+debug.log
+debug.txt
+
+# 其他工具生成的文件
+.specstory
+

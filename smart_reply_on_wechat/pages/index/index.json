@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "agent-ui": "/components/agent-ui/index",
+    "config-panel": "/components/config-panel/index"
+  }
+}

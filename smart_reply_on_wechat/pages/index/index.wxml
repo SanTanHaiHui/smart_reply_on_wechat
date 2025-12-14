@@ -1,0 +1,37 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 顶部标题栏 -->
+  <view class="header">
+    <view class="header-content">
+      <view class="header-text">
+        <text class="header-title">接话</text>
+        <text class="header-subtitle">帮你找到合适的回复</text>
+      </view>
+      <view class="config-btn" bindtap="openConfigPanel">
+        <text class="config-icon">⚙</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Agent UI 聊天组件 -->
+  <view class="chat-container">
+    <agent-ui 
+      agentConfig="{{agentConfig}}" 
+      showBotAvatar="{{showBotAvatar}}" 
+      chatMode="{{chatMode}}"
+      promptTransform="{{promptTransform}}"
+      id="agent-ui"
+    ></agent-ui>
+  </view>
+
+
+  <!-- 配置面板 -->
+  <config-panel
+    show="{{showConfigPanel}}"
+    relation="{{relation}}"
+    relationDensity="{{relationDensity}}"
+    replyStyle="{{replyStyle}}"
+    bind:close="closeConfigPanel"
+    bind:change="onConfigChange"
+  ></config-panel>
+</view>

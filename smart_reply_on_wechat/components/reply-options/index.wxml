@@ -1,0 +1,13 @@
+<!--components/reply-options/index.wxml-->
+<view class="reply-options-container">
+  <view class="reply-header">AI生成的回复</view>
+  <view class="reply-options-list">
+    <view class="reply-option-item" wx:for="{{options}}" wx:key="index">
+      <view class="option-wording">{{item.wording}}</view>
+      <view class="option-copy-btn {{copiedIndex === index ? 'copied' : ''}}" bindtap="copyWording" data-wording="{{item.wording}}" data-index="{{index}}">
+        <text class="copy-text">{{copiedIndex === index ? '已复制' : '复制'}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
