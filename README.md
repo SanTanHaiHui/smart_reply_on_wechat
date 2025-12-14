@@ -15,7 +15,9 @@
 
 展示如何使用"接话"小程序进行微信聊天回复：
 
-![Demo GIF](demo.gif)
+<div align="center">
+  <img src="demo.gif" alt="Demo GIF" width="600"/>
+</div>
 
 ## 🚀 快速开始
 
